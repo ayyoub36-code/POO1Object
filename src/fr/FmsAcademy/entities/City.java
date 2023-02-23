@@ -9,7 +9,7 @@ public class City {
 	public static int counter;
 
 	// constructor avec une forte encapsulation !
-	public City(String name, String country, int nbInhabitants) {
+	public City(String name, String country, int nbInhabitants) throws Exception {
 		setName(name);
 		setCountry(country);
 		setNbInhabitants(nbInhabitants);
@@ -17,7 +17,7 @@ public class City {
 
 	}
 
-	public City(String name, int nbInhabitants) {
+	public City(String name, int nbInhabitants) throws Exception {
 		setName(name);
 		this.country = "unknown";
 		setNbInhabitants(nbInhabitants);
@@ -55,14 +55,12 @@ public class City {
 		return nbInhabitants;
 	}
 
-	public void setNbInhabitants(int nbInhabitants) {
+	// add exception and throw it
+	public void setNbInhabitants(int nbInhabitants) throws Exception {
 		// mettre conditions ! nb négatif et baisse de population !
 		if (nbInhabitants < 0)
-			System.out.println("le nombre ne peut pas être négatif !");
-		else if (nbInhabitants < this.nbInhabitants) {
-			System.out.println("vous pouvez pas dissimer les toulousein !!");
-
-		} else
+			throw new Exception("le nombre ne peut pas être négatif !");
+		else
 			this.nbInhabitants = nbInhabitants;
 	}
 

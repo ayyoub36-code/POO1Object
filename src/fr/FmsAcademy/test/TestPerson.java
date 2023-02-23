@@ -19,7 +19,13 @@ public class TestPerson {
 		System.out.println(biden);
 
 		System.out.println("\n---------------------------------1.9-----------------------------");
-		Person manu2 = new Person("Macron", "Emanuel", 43, "Elysee à Paris", new City("Amiens", "France"));
+		Person manu2 = null;
+		try {
+			manu2 = new Person("Macron", "Emanuel", 43, "Elysee à Paris", new City("Amiens", "France"));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		Person poutine2 = new Person("Poutine", "Vlad", 68);
 		Person biden2 = new Person("Biden", "joe");
 
@@ -29,7 +35,13 @@ public class TestPerson {
 
 		System.out.println("---------------------------------2.0-----------------------------\n");
 		// villes
-		City paris = new City("Paris", "France", 1000000);
+		City paris = null;
+		try {
+			paris = new City("Paris", "France", 1000000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		City chateauroux = new City("Châteauroux", "France");
 		City newYork = new City("New York", "Etats-unis");
 		City newYork2 = new City("New York", "USA");
@@ -37,12 +49,20 @@ public class TestPerson {
 		City amiens = new City("Amiens", "France");
 
 		// personnalitées
-		Person manu3 = new Person("Macron", "Emanuel", 43, "Elysee à Paris", amiens);
-		Person sarco = new Person("Sarcozy", "Nicolas", 66, "Paris", paris);
-		Person boris = new Person("Boris", "Jhonson", 56, "Doning street à London", newYork);
-		Person gerard = new Person("Depardieu", "Gerard", 72, "Moscou", chateauroux);
-		Person kravitz = new Person("Kravitz", "Lenny", 56, "Hotel particulier à Paris", newYork2);
-		Person jennifer = new Person("Lawrence", "jennifer", 30, "Lousiville aux USA", indianHills);
+		Person manu3 = null, sarco = null, boris = null, gerard = null, kravitz = null, jennifer = null;
+
+		try {
+			manu3 = new Person("Macron", "Emanuel", 43, "Elysee à Paris", amiens);
+			sarco = new Person("Sarcozy", "Nicolas", 66, "Paris", paris);
+			boris = new Person("Boris", "Jhonson", 56, "Doning street à London", newYork);
+			gerard = new Person("Depardieu", "Gerard", 72, "Moscou", chateauroux);
+			kravitz = new Person("Kravitz", "Lenny", 56, "Hotel particulier à Paris", newYork2);
+			jennifer = new Person("Lawrence", "jennifer", 30, "Lousiville aux USA", indianHills);
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		System.out.println("Liste de personnalitées : ");
 		System.out.println(manu3);

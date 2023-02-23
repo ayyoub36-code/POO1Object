@@ -8,7 +8,7 @@ public class Person {
 	private String adress;
 	private City cityOfBirth;
 
-	public Person(String lastName, String firstName, int age, String adress, City cityOfBirth) {
+	public Person(String lastName, String firstName, int age, String adress, City cityOfBirth) throws Exception {
 		setLastName(lastName);
 		setFirstName(firstName);
 		setAge(age);
@@ -90,8 +90,8 @@ public class Person {
 				+ cityOfBirth;
 	}
 
-	public void setCityOfBirth(City cityOfBirth) {
-		this.cityOfBirth = cityOfBirth;
+	public void setCityOfBirth(City cityOfBirth) throws Exception {
+		this.cityOfBirth = new City(cityOfBirth.getName(), cityOfBirth.getCountry(), cityOfBirth.getNbInhabitants());
 	}
 
 }

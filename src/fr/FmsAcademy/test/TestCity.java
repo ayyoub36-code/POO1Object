@@ -2,13 +2,25 @@ package fr.FmsAcademy.test;
 
 import fr.FmsAcademy.entities.City;
 
+/**
+ * test City
+ * 
+ * @author Mehdioui Ayyoub
+ * 
+ */
 public class TestCity {
 
 	public static void main(String[] args) {
 		// use the Class City
-		City toulouse = new City("Toulouse", "France", 450000);
-		City rabat = new City("Rabat", "Maroc", 577000);
-		City rome = new City("Rome", "Italy", 850000);
+		City toulouse = null, rabat = null, rome = null, paris = null;
+		try {
+			toulouse = new City("Toulouse", "France", 450000);
+			rabat = new City("Rabat", "Maroc", 577000);
+			rome = new City("Rome", "Italy", 850000);
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 
 		// 1.1
 		System.out.println("---------------------------1.1-------------------------------------------------\n");
@@ -18,7 +30,11 @@ public class TestCity {
 
 		int nbHabitants = toulouse.getNbInhabitants();
 		nbHabitants += 20000;
-		toulouse.setNbInhabitants(nbHabitants);
+		try {
+			toulouse.setNbInhabitants(nbHabitants);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 		System.out.println("\nToulouse après modif:" + toulouse.toString());
 
@@ -26,14 +42,23 @@ public class TestCity {
 		System.out.println("----------------------1.2------------------------------------------------------------\n");
 		System.out.println("[ville: " + toulouse.getName() + "] " + "[pays : " + toulouse.getCountry() + "] "
 				+ "[nombre d'habitants : " + toulouse.getNbInhabitants() + "]\n");
-		toulouse.setNbInhabitants(-200);
-		toulouse.setNbInhabitants(370000);
+		try {
+			toulouse.setNbInhabitants(-200);
+			toulouse.setNbInhabitants(370000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 		System.out.println("\n[ville: " + toulouse.getName() + "] " + "[pays : " + toulouse.getCountry() + "] "
 				+ "[nombre d'habitants : " + toulouse.getNbInhabitants() + "]\n");
 		System.out.println("----------------------1.3-------------------------------------------------------------\n");
 
 		// 1.3
-		City paris = new City("Paris", 1000000);
+		try {
+			paris = new City("Paris", 1000000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		System.out.println(paris.toString());
 		System.out.println("[ville: " + paris.getName() + "] " + "[pays : " + paris.getCountry() + "] "
 				+ "[nombre d'habitants : " + paris.getNbInhabitants() + "]\n");
